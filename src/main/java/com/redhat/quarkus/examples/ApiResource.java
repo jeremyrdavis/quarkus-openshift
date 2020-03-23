@@ -22,6 +22,7 @@ public class ApiResource {
     @GET
     @Path("/createOrderCommand")
     public Response getCreateOrderCommandJson() {
+        System.out.println("createOrderCommand");
         CreateOrderCommand createOrderCommand = new CreateOrderCommand();
         createOrderCommand.addBeverages(createBeverages());
         createOrderCommand.addKitchenItems(createKitchenItems());
