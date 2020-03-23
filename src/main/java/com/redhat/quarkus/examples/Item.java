@@ -1,5 +1,8 @@
 package com.redhat.quarkus.examples;
 
+import io.quarkus.runtime.annotations.RegisterForReflection;
+
+@RegisterForReflection
 public enum Item {
 
     //Beverages

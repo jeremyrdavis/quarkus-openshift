@@ -2,6 +2,9 @@ package com.redhat.quarkus.examples;
 
 import java.util.UUID;
 
+import io.quarkus.runtime.annotations.RegisterForReflection;
+
+@RegisterForReflection
 public class OrderEvent {
 
     public String itemId;
