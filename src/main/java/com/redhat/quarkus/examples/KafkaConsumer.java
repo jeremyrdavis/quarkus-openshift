@@ -7,7 +7,7 @@ import io.smallrye.reactive.messaging.kafka.KafkaRecord;
 
 public class KafkaConsumer{
 
-    @Incoming("orders-topic")
+    @Incoming("orders-in")
     @Outgoing("my-data-stream")
     @Broadcast
     public String incoming(final KafkaRecord kafkaRecord){
