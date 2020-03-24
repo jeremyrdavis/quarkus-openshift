@@ -149,4 +149,12 @@
 
 
 </body>
+<script>
+    $(function () {
+        var source = new EventSource("http://quarkus-openshift-quarkus-cafe.apps.cluster-virtual-1b57.virtual-1b57.sandbox1482.opentlc.com/stream");
+        source.onmessage = function(e) {
+            console.log(e);
+        };
+    });
+</script>
 </html>

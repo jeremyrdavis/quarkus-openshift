@@ -9,6 +9,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.eclipse.microprofile.reactive.messaging.Incoming;
 import org.eclipse.microprofile.reactive.messaging.Outgoing;
+
+import io.smallrye.reactive.messaging.annotations.Broadcast;
 import io.smallrye.reactive.messaging.kafka.KafkaRecord;
 import io.reactivex.Flowable;
 
@@ -30,9 +32,12 @@ public class KafkaProducer{
     }
 
     @Incoming("orders-topic")
-    public void incoming(final KafkaRecord kafkaRecord){
+    @Outgoing("my-data-stream")
+    @Broadcast
+    public String incoming(final KafkaRecord kafkaRecord){
 
         System.out.println("receieved: " + kafkaRecord.getKey() + " " + kafkaRecord.getPayload());
+        return kafkaRecord.getPayload().toString();
     }
 
 
