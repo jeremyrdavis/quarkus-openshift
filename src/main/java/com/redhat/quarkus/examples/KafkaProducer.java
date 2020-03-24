@@ -31,14 +31,4 @@ public class KafkaProducer{
                 });
     }
 
-    @Incoming("orders-topic")
-    @Outgoing("my-data-stream")
-    @Broadcast
-    public String incoming(final KafkaRecord kafkaRecord){
-
-        System.out.println("receieved: " + kafkaRecord.getKey() + " " + kafkaRecord.getPayload());
-        return kafkaRecord.getPayload().toString();
-    }
-
-
 }
