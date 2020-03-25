@@ -17,7 +17,7 @@ public class KafkaProducer{
 
     Jsonb jsonb = JsonbBuilder.create();
 
-    @Outgoing("orders-topic")
+    @Outgoing("orders-out")
     public Flowable<KafkaRecord<String, String>> generate() {
 
         return Flowable.interval(500, TimeUnit.MILLISECONDS)    
